@@ -46,7 +46,7 @@ class User extends CI_Controller {
 		$users = $this->db->query("SELECT * FROM `users` WHERE `email`='" . $email . "'")->result_array();
 		if (sizeof($users) > 0) {
 			$user = $users[0];
-			if ($user['first_access'] == NULL || $user['first_access'].trim() == '') {
+			if ($user['first_access'] == NULL || trim($user['first_access']) == '') {
 				$this->db->query("UPDATE `users` SET `first_access`='" . $date . "' WHERE `email`='" . $email . "'");
 			}
 			$user['response_code'] = 1;
