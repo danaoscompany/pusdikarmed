@@ -14,7 +14,7 @@ $(document).ready(function() {
 					"\t\t\t\t\t\t\t\t\t\t<div class=\"card-shadow-danger mb-3 widget-chart widget-chart2 text-left card\">\n" +
 					"\t\t\t\t\t\t\t\t\t\t\t<div class=\"widget-content\">\n" +
 					"\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"widget-content-outer\">\n" +
-					"\t\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"http://pusdikarmed.kodiklat-tniad.mil.id/admin/userdata/images/"+banner['img']+"\" width=\"100%\" height=\"100px\">\n" +
+					"\t\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/userdata/images/"+banner['img']+"\" width=\"100%\" height=\"100px\">\n" +
 					"\t\t\t\t\t\t\t\t\t\t\t\t\t<div style=\"width: 100%; display: flex; flex-direction: column; align-items: center;\">\n" +
 					"\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button onclick='viewBanner("+i+")' class=\"mb-2 mr-2 btn btn-info\" style=\"margin-top: 10px;\">Lihat</button>\n" +
 					"\t\t\t\t\t\t\t\t\t\t\t\t\t\t<button onclick='confirmDeleteBanner("+i+")' class=\"mb-2 mr-2 btn btn-danger\" style=\"margin-top: -5px;\">Hapus</button>\n" +
@@ -30,7 +30,7 @@ $(document).ready(function() {
 
 function viewBanner(index) {
 	var banner = banners[index];
-	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/admin/banner/view_banner", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/banner/view_banner", {
 		'id': parseInt(banner['id'])
 	});
 }
@@ -48,7 +48,7 @@ function confirmDeleteBanner(index) {
 			contentType: false,
 			cache: false,
 			success: function(response) {
-				window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/banner";
+				window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/banner";
 			}
 		});
 	}
@@ -67,7 +67,7 @@ function addBanner() {
 			contentType: false,
 			cache: false,
 			success: function(response) {
-				window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/banner";
+				window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/banner";
 			}
 		});
 	}).click();

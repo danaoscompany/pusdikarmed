@@ -25,7 +25,7 @@ function getMessages() {
 				if (imgURL == null || imgURL == "") {
 					imgTag = "";
 				} else {
-					imgTag = "<img src='http://pusdikarmed.kodiklat-tniad.mil.id/admin/userdata/images/"+imgURL+"' width='100px' height='100px'>";
+					imgTag = "<img src='http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/userdata/images/"+imgURL+"' width='100px' height='100px'>";
 				}
 				if (message['type'] == 'text') {
 					$("#messages").append("<tr>" +
@@ -39,7 +39,7 @@ function getMessages() {
 				} else if (message['type'] == 'image') {
 					$("#messages").append("<tr>" +
 						"                                        <th scope=\"row\">" + (i + 1) + "</th>" +
-						"                                        <td><img src=\"http://pusdikarmed.kodiklat-tniad.mil.id/admin/userdata/"+message['image']+"\" width='70px' height='70px'></td>" +
+						"                                        <td><img src=\"http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/userdata/"+message['image']+"\" width='70px' height='70px'></td>" +
 						"                                        <td>" + message['user_name'] + "</td>" +
 						"                                        <td>" + moment(message['date']).format('DD MMMM YYYY hh:mm:ss') + "</td>" +
 						"                                        <td><button onclick='viewMessage(" + i + ")' class='btn-shadow p-1 btn btn-primary btn-sm show-toastr-example'>Lihat</button></td>" +
@@ -53,7 +53,7 @@ function getMessages() {
 
 function viewMessage(index) {
 	var message = messages[index];
-	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/admin/message/view", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/message/view", {
 		'id': parseInt(message['id'])
 	});
 }
@@ -77,7 +77,7 @@ function deleteMessage() {
 		contentType: false,
 		cache: false,
 		success: function(response) {
-			window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/message";
+			window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/message";
 		}
 	});
 }

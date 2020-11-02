@@ -89,7 +89,7 @@ function getSessions(userID) {
 }
 
 function editSession(index) {
-	$.redirect('http://pusdikarmed.kodiklat-tniad.mil.id/admin/sessions/edit', {
+	$.redirect('http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/sessions/edit', {
 		'uuid': sessions[index]['uuid']
 	});
 }

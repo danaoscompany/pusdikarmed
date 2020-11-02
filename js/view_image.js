@@ -29,7 +29,7 @@ $(document).ready(function() {
 		cache: false,
 		success: function(response) {
 			var image = JSON.parse(response);
-			$("#img-preview").attr("src", "http://pusdikarmed.kodiklat-tniad.mil.id/admin/userdata/"+image['path']);
+			$("#img-preview").attr("src", "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/userdata/"+image['path']);
 			let fd2 = new FormData();
 			fd2.append("session_uuid", image['session_uuid']);
 			$.ajax({

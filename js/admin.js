@@ -38,7 +38,7 @@ function getAdmins() {
 }
 
 function editAdmin(index) {
-	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/admin/admin/edit", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/admin/edit", {
 		'id': admins[index]['id']
 	});
 }

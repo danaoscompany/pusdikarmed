@@ -48,7 +48,7 @@ function getDocuments() {
 
 function editDocument(index) {
 	var document = documents[index];
-	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/admin/petadik/edit", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/petadik/edit", {
 		'id': parseInt(document['id'])
 	});
 }

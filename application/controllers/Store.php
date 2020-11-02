@@ -9,7 +9,7 @@ class Store extends CI_Controller {
 				'adminID' => $adminID
 			));
 		} else {
-			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/admin/login');
+			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/login');
 		}
 	}
 
@@ -22,10 +22,10 @@ class Store extends CI_Controller {
 					'adminID' => $adminID
 				));
 			} else {
-				header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/admin/store');
+				header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/store');
 			}
 		} else {
-			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/admin/login');
+			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/login');
 		}
 	}
 
@@ -40,10 +40,10 @@ class Store extends CI_Controller {
 					'storeID' => $storeID
 				));
 			} else {
-				header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/admin/store');
+				header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/store');
 			}
 		} else {
-			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/admin/login');
+			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/login');
 		}
 	}
 }

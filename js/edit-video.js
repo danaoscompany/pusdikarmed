@@ -97,7 +97,7 @@ function startUpload(name, imageData) {
 	ajax.addEventListener("load", completeHandler, false);
 	ajax.addEventListener("error", errorHandler, false);
 	ajax.addEventListener("abort", abortHandler, false);
-	ajax.open("POST", "http://pusdikarmed.kodiklat-tniad.mil.id/admin/admin/update_video");
+	ajax.open("POST", "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/admin/update_video");
 	ajax.send(formdata);
 }
 
@@ -107,7 +107,7 @@ function progressHandler(event) {
 }
 
 function completeHandler(event) {
-	window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/video";
+	window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/video";
 }
 
 function errorHandler(event) {

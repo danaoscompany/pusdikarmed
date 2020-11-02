@@ -67,7 +67,7 @@ function save() {
 			var obj = JSON.parse(response);
 			var responseCode = parseInt(obj['response_code']);
 			if (responseCode == 1) {
-				window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/admin";
+				window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/admin";
 			}
 		}
 	});

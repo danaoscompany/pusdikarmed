@@ -34,7 +34,7 @@ function getProducts() {
 
 function viewQR(index) {
 	var product = products[index];
-	$.redirect('http://pusdikarmed.kodiklat-tniad.mil.id/admin/product/view_qr', {
+	$.redirect('http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/product/view_qr', {
 		'product_code': product['code']
 	});
 }
@@ -74,7 +74,7 @@ function printNext() {
 
 function editProduct(index) {
 	var product = products[index];
-	$.redirect('http://pusdikarmed.kodiklat-tniad.mil.id/admin/product/edit', {
+	$.redirect('http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/product/edit', {
 		'id': parseInt(product['id'])
 	});
 }

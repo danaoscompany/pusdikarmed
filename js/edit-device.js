@@ -59,7 +59,7 @@ function save() {
 		contentType: false,
 		cache: false,
 		success: function(response) {
-			$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/admin/devices", {
+			$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/devices", {
 				id: userID
 			});
 		}

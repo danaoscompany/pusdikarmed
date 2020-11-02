@@ -45,7 +45,7 @@ function addDocument() {
 		contentType: false,
 		cache: false,
 		success: function(response) {
-			window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/document";
+			window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/document";
 		}
 	});
 }

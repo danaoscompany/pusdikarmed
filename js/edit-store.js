@@ -69,7 +69,7 @@ function getSellers() {
 							anchorXUnits: 'fraction',
 							anchorYUnits: 'pixels',
 							opacity: 0.75,
-							src: 'http://pusdikarmed.kodiklat-tniad.mil.id/admin/userdata/system/map.png'
+							src: 'http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/userdata/system/map.png'
 						}))
 					});
 					feature.setStyle(iconStyle);
@@ -131,7 +131,7 @@ function save() {
 		contentType: false,
 		cache: false,
 		success: function(response) {
-			window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/store";
+			window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/store";
 		}
 	});
 }

@@ -9,7 +9,7 @@ class Message extends CI_Controller {
 				'adminID' => $adminID
 			));
 		} else {
-			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/admin/login');
+			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/login');
 		}
 	}
 
@@ -22,10 +22,10 @@ class Message extends CI_Controller {
 					'adminID' => $adminID
 				));
 			} else {
-				header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/admin/message');
+				header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/message');
 			}
 		} else {
-			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/admin/login');
+			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/login');
 		}
 	}
 
@@ -38,7 +38,7 @@ class Message extends CI_Controller {
 				'messageID' => $messageID
 			));
 		} else {
-			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/admin/login');
+			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/login');
 		}
 	}
 }
