@@ -53,7 +53,7 @@ function getDevices() {
 }
 
 function editDevice(index) {
-	$.redirect("http://batterynusantara.com/devices/edit", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/devices/edit", {
 		'uuid': devices[index]['uuid'],
 		'id': devices[index]['user_id']
 	});
@@ -84,7 +84,7 @@ function deleteDevice() {
 }
 
 function addDevice() {
-	$.redirect("http://batterynusantara.com/devices/add", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/devices/add", {
 		id: userID
 	});
 }

@@ -21,8 +21,7 @@ function addAdmin() {
 	let name = $("#name").val().trim();
 	let email = $("#email").val().trim();
 	let password = $("#password").val().trim();
-	let role = $("#roles").prop('selectedIndex');
-	if (name == "" || email == "" || password == "" || role == 0) {
+	if (name == "" || email == "" || password == "") {
 		alert("Mohon lengkapi data");
 		return;
 	}
@@ -30,7 +29,6 @@ function addAdmin() {
 	fd.append("name", name);
 	fd.append("email", email);
 	fd.append("password", password);
-	fd.append("role", role+1);
 	$.ajax({
 		type: 'POST',
 		url: PHP_URL+"/admin/add_admin",

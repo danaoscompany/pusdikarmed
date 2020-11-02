@@ -39,7 +39,7 @@ $(document).ready(function() {
 			anchorXUnits: 'fraction',
 			anchorYUnits: 'pixels',
 			opacity: 0.75,
-			src: 'http://batterynusantara.com/userdata/system/map.png'
+			src: 'http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/userdata/system/map.png'
 		}))
 	});
 	feature.setStyle(iconStyle);

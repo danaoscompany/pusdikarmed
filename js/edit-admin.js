@@ -19,7 +19,6 @@ $(document).ready(function() {
 			$("#name").val(obj['name']);
 			$("#email").val(obj['email']);
 			$("#password").val(obj['password']);
-			$("#roles").prop('selectedIndex', parseInt(obj['role'])-1);
 		}
 	});
 	let adminID = parseInt($("#admin-id").val());
@@ -44,7 +43,6 @@ function save() {
 	let name = $("#name").val().trim();
 	let email = $("#email").val().trim();
 	let password = $("#password").val().trim();
-	let role = parseInt($("#roles").prop('selectedIndex'))+1;
 	if (email == "" || password == "") {
 		alert("Mohon lengkapi data");
 		return;
@@ -57,7 +55,6 @@ function save() {
 	fd.append("name", name);
 	fd.append("email", email);
 	fd.append("password", password);
-	fd.append("role", role);
 	fd.append("email_changed", emailChanged);
 	$.ajax({
 		type: 'POST',
@@ -70,7 +67,7 @@ function save() {
 			var obj = JSON.parse(response);
 			var responseCode = parseInt(obj['response_code']);
 			if (responseCode == 1) {
-				window.location.href = "http://batterynusantara.com/admin";
+				window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/admin";
 			}
 		}
 	});

@@ -77,7 +77,7 @@ function getPatients(userID) {
 						var selectedUserIndex = $("#users").prop('selectedIndex');
 						if (selectedUserIndex > 0) {
 							selectedUserIndex--;
-							$.redirect("http://batterynusantara.com/patients/add", {
+							$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/patients/add", {
 								'id': users[selectedUserIndex]['id']
 							});
 						}

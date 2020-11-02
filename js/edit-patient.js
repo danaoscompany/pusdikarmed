@@ -67,7 +67,7 @@ function save() {
 		contentType: false,
 		cache: false,
 		success: function(response) {
-			$.redirect("http://batterynusantara.com/patients", {
+			$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/patients", {
 				'id': userID
 			});
 		}

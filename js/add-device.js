@@ -42,7 +42,7 @@ function addDevice() {
 		contentType: false,
 		cache: false,
 		success: function(response) {
-			$.redirect("http://batterynusantara.com/devices", {
+			$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/devices", {
 				id: userID
 			});
 		}

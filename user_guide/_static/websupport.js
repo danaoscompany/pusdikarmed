@@ -773,7 +773,7 @@
         <form id="rf<%id%>">\
           <textarea name="comment" cols="80"></textarea>\
           <input type="submit" value="Add reply" />\
-          <input type="button" value="Cancel" />\
+          <input type="button" value="Batal" />\
           <input type="hidden" name="parent" value="<%id%>" />\
           <input type="hidden" name="node" value="" />\
         </form>\

@@ -132,7 +132,7 @@ function getImages(userID, sessionUUID) {
 					"          <div class=\"card-shadow-danger mb-3 widget-chart widget-chart2 text-left card\">\n" +
 					"           <div class=\"widget-content\">\n" +
 					"            <div class=\"widget-content-outer\">\n" +
-					"             <img src=\"http://batterynusantara.com/userdata/"+image['path']+"\" style='border-radius: 5px;' width=\"100%\" height=\"150px\">\n" +
+					"             <img src=\"http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/userdata/"+image['path']+"\" style='border-radius: 5px;' width=\"100%\" height=\"150px\">\n" +
 					"             <div style=\"width: 100%; display: flex; flex-direction: column; align-items: center;\">\n" +
 					"              <button onclick=\"viewImage("+i+")\" class=\"mb-2 mr-2 btn btn-info\" style=\"margin-top: 10px;\">View</button>\n" +
 					"              <button class=\"mb-2 mr-2 btn btn-danger\" style=\"margin-top: -5px;\">Delete</button>\n" +
@@ -149,7 +149,7 @@ function getImages(userID, sessionUUID) {
 function viewImage(index) {
 	var image = images[index];
 	$("#uuid").val(image['uuid']);
-	$.redirect("http://batterynusantara.com/image/view_image", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/image/view_image", {
 		uuid: image['uuid']
 	});
 }

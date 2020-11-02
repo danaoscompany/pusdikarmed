@@ -32,13 +32,13 @@ function save() {
 		contentType: false,
 		cache: false,
 		success: function(response) {
-			window.location.href = "http://batterynusantara.com/settings";
+			window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/settings";
 		}
 	});
 }
 
 function cancel() {
 	if (confirm("Apakah Anda yakin ingin membatalkan perubahan?")) {
-		window.location.href='http://batterynusantara.com/settings';
+		window.location.href='http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/settings';
 	}
 }

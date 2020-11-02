@@ -31,7 +31,7 @@ function getStores() {
 
 function editStore(index) {
 	var store = stores[index];
-	$.redirect('http://batterynusantara.com/store/edit', {
+	$.redirect('http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/store/edit', {
 		'id': parseInt(store['id'])
 	});
 }
@@ -49,7 +49,7 @@ function deleteStore(index) {
 			contentType: false,
 			cache: false,
 			success: function(response) {
-				window.location.href = "http://batterynusantara.com/store";
+				window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/store";
 			}
 		});
 	}

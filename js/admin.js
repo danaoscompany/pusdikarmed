@@ -29,7 +29,6 @@ function getAdmins() {
 					"                                        <td>"+admin['name']+"</td>" +
 					"                                        <td>"+admin['email']+"</td>" +
 					"                                        <td>"+admin['password']+"</td>" +
-					"                                        <td>"+role+"</td>" +
 					"                                        <td><button onclick='editAdmin("+i+")' class='btn-shadow p-1 btn btn-primary btn-sm show-toastr-example'>Edit</button></td>" +
 					"                                        <td><button onclick='confirmDeleteAdmin("+i+")' class='btn-shadow p-1 btn btn-danger btn-sm show-toastr-example' data-toggle='modal' data-target='#confirm'>Delete</button></td>" +
 					"                                    </tr>");
@@ -39,7 +38,7 @@ function getAdmins() {
 }
 
 function editAdmin(index) {
-	$.redirect("http://batterynusantara.com/admin/edit", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/admin/edit", {
 		'id': admins[index]['id']
 	});
 }

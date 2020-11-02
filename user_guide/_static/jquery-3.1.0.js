@@ -8812,7 +8812,7 @@ jQuery.extend( {
 					return this;
 				},
 
-				// Cancel the request
+				// Batal the request
 				abort: function( statusText ) {
 					var finalText = statusText || strAbort;
 					if ( transport ) {

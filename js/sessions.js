@@ -89,7 +89,7 @@ function getSessions(userID) {
 }
 
 function editSession(index) {
-	$.redirect('http://batterynusantara.com/sessions/edit', {
+	$.redirect('http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/sessions/edit', {
 		'uuid': sessions[index]['uuid']
 	});
 }

@@ -13,11 +13,11 @@
 		  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
 	<meta name="description" content="Tables are the backbone of almost all web applications.">
 	<meta name="msapplication-tap-highlight" content="no">
-	<script src="http://192.168.43.182/pusdikarmed/js/jquery.js"></script>
-	<script src="http://192.168.43.182/pusdikarmed/js/global.js"></script>
-	<script src="http://192.168.43.182/pusdikarmed/js/jquery.redirect.js"></script>
-	<script src="http://192.168.43.182/pusdikarmed/js/moment.js"></script>
-	<script src="http://192.168.43.182/pusdikarmed/js/user.js"></script>
+	<script src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/js/jquery.js"></script>
+	<script src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/js/global.js"></script>
+	<script src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/js/jquery.redirect.js"></script>
+	<script src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/js/moment.js"></script>
+	<script src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/js/user.js"></script>
 	<!--
 	=========================================================
 	* ArchitectUI HTML Theme Dashboard - v1.0.0
@@ -28,13 +28,13 @@
 	=========================================================
 	* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 	-->
-	<link href="http://192.168.43.182/pusdikarmed/main.css" rel="stylesheet">
+	<link href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/main.css" rel="stylesheet">
 </head>
 <body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
 	<div class="app-header header-shadow">
 		<div class="app-header__logo">
-			<img src="http://192.168.43.182/pusdikarmed/assets/images/icon.png" width="30px" height="30px">
+			<img src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/assets/images/icon.png" width="50px" height="30px">
 			<div class="header__pane ml-auto">
 				<div>
 					<button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
@@ -69,55 +69,43 @@
 			<div class="app-header-left">
 				<ul class="header-menu nav">
 					<li class="nav-item">
-						<a href="http://192.168.43.182/pusdikarmed/admin" class="nav-link">
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/admin" class="nav-link">
 							<i class="nav-link-icon fa fa-users-cog"> </i>
 							Admin
 						</a>
 					</li>
 					<li class="btn-group nav-item">
-						<a href="http://192.168.43.182/pusdikarmed/user" class="nav-link">
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/user" class="nav-link">
 							<i class="nav-link-icon fa fa-user"></i>
 							User
 						</a>
 					</li>
 					<li class="btn-group nav-item">
-						<a href="http://192.168.43.182/pusdikarmed/banner" class="nav-link">
-							<i class="nav-link-icon fa fa-bookmark"></i>
-							Banner
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/document" class="nav-link">
+							<i class="nav-link-icon fa fa-paperclip"></i>
+							Dokumen
 						</a>
 					</li>
 					<li class="btn-group nav-item">
-						<a href="http://192.168.43.182/pusdikarmed/store" class="nav-link">
-							<i class="nav-link-icon fa fa-store"></i>
-							Toko
-						</a>
-					</li>
-					<li class="btn-group nav-item">
-						<a href="http://192.168.43.182/pusdikarmed/product" class="nav-link">
-							<i class="nav-link-icon fa fa-box-open"></i>
-							Produk
-						</a>
-					</li>
-					<li class="btn-group nav-item">
-						<a href="http://192.168.43.182/pusdikarmed/news" class="nav-link">
-							<i class="nav-link-icon fa fa-newspaper"></i>
-							Berita
-						</a>
-					</li>
-					<li class="btn-group nav-item">
-						<a href="http://192.168.43.182/pusdikarmed/message" class="nav-link">
-							<i class="nav-link-icon fa fa-envelope"></i>
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/message" class="nav-link">
+							<i class="nav-link-icon fa fa-comment"></i>
 							Pesan
 						</a>
 					</li>
 					<li class="btn-group nav-item">
-						<a href="http://192.168.43.182/pusdikarmed/settings" class="nav-link">
-							<i class="nav-link-icon fa fa-tools"></i>
-							Pengaturan
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/petadik" class="nav-link">
+							<i class="nav-link-icon fa fa-map"></i>
+							PetaDik
+						</a>
+					</li>
+					<li class="btn-group nav-item">
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/video" class="nav-link">
+							<i class="nav-link-icon fa fa-play"></i>
+							Video
 						</a>
 					</li>
 					<li class="dropdown nav-item">
-						<a href="http://192.168.43.182/pusdikarmed/logout" class="nav-link">
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/logout" class="nav-link">
 							<i class="nav-link-icon fa fa-sign-out-alt"></i>
 							Logout
 						</a>
@@ -132,7 +120,7 @@
 								<div class="btn-group">
 									<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
 									   class="p-0 btn">
-										<img width="42" height="42" class="rounded-circle" src="http://192.168.43.182/pusdikarmed/images/profile_picture.png" alt="" style="border-radius: 21;">
+										<img width="42" height="42" class="rounded-circle" src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/images/profile_picture.png" alt="" style="border-radius: 21;">
 										<i class="fa fa-angle-down ml-2 opacity-8"></i>
 									</a>
 									<div tabindex="-1" role="menu" aria-hidden="true"
@@ -156,7 +144,7 @@
 	<div class="app-main">
 		<div class="app-sidebar sidebar-shadow">
 			<div class="app-header__logo">
-				<img src="http://192.168.43.182/pusdikarmed/assets/images/icon.png" width="30px" height="30px">
+				<img src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/assets/images/icon.png" width="50px" height="30px">
 				<div class="header__pane ml-auto">
 					<div>
 						<button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
@@ -192,55 +180,43 @@
 					<ul class="vertical-nav-menu">
 						<li>
 						<li>
-							<a href="http://192.168.43.182/pusdikarmed/admin">
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/admin">
 								<i class="metismenu-icon pe-7s-users"></i>
 								Admin
 							</a>
 						</li>
 						<li class="mm-active">
-							<a href="http://192.168.43.182/pusdikarmed/user">
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/user">
 								<i class="metismenu-icon pe-7s-users"></i>
 								User
 							</a>
 						</li>
 						<li>
-							<a href="http://192.168.43.182/pusdikarmed/banner">
-								<i class="metismenu-icon pe-7s-flag"></i>
-								Banner
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/document">
+								<i class="metismenu-icon pe-7s-paperclip"></i>
+								Dokumen
 							</a>
 						</li>
 						<li>
-							<a href="http://192.168.43.182/pusdikarmed/store">
-								<i class="metismenu-icon pe-7s-shopbag"></i>
-								Toko
-							</a>
-						</li>
-						<li>
-							<a href="http://192.168.43.182/pusdikarmed/product">
-								<i class="metismenu-icon pe-7s-cart"></i>
-								Produk
-							</a>
-						</li>
-						<li>
-							<a href="http://192.168.43.182/pusdikarmed/news">
-								<i class="metismenu-icon pe-7s-news-paper"></i>
-								Berita
-							</a>
-
-						<li>
-							<a href="http://192.168.43.182/pusdikarmed/message">
-								<i class="metismenu-icon pe-7s-mail-open"></i>
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/message">
+								<i class="metismenu-icon pe-7s-chat"></i>
 								Pesan
 							</a>
 						</li>
 						<li>
-							<a href="http://192.168.43.182/pusdikarmed/settings">
-								<i class="metismenu-icon pe-7s-settings"></i>
-								Pengaturan
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/petadik">
+								<i class="metismenu-icon pe-7s-map"></i>
+								PetaDik
+							</a>
+
+						<li>
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/video">
+								<i class="metismenu-icon pe-7s-video"></i>
+								Video
 							</a>
 						</li>
 						<li>
-							<a href="http://192.168.43.182/pusdikarmed/logout">
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/logout">
 								<i class="metismenu-icon pe-7s-close-circle"></i>
 								Keluar
 							</a>
@@ -263,7 +239,7 @@
 						</div>
 						<div class="page-title-actions">
 							<div class="d-inline-block dropdown">
-								<button onclick="window.location.href='http://192.168.43.182/pusdikarmed/user/add'" type="button" class="btn-shadow btn btn-info">
+								<button onclick="window.location.href='http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/user/add'" type="button" class="btn-shadow btn btn-info">
 									Add User
 								</button>
 							</div>
@@ -278,11 +254,10 @@
 									<thead>
 									<tr>
 										<th>#</th>
-										<th>Nama</th>
+										<th>Nama Dpn.</th>
+										<th>Nama Blk.</th>
 										<th>Email</th>
-										<th>Kata Sandi</th>
-										<th>Nomor HP</th>
-										<th>Tanggal Lahir</th>
+										<th>Role</th>
 										<th>Ubah</th>
 										<th>Hapus</th>
 									</tr>
@@ -336,6 +311,6 @@
 	</div>
 </div>
 <input type="hidden" id="admin-id" value="<?php echo $adminID; ?>">
-<script type="text/javascript" src="http://192.168.43.182/pusdikarmed/assets/scripts/main.js"></script>
+<script type="text/javascript" src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/assets/scripts/main.js"></script>
 </body>
 </html>

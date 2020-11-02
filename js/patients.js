@@ -8,6 +8,7 @@ $(document).ready(function() {
 	userID = parseInt($("#user-id").val());
 	let fd = new FormData();
 	fd.append("id", userID);
+	fd.append("date", moment(new Date()).format('YYYY-MM-DD HH:mm:ss'));
 	$.ajax({
 		type: 'POST',
 		url: PHP_URL+"/admin/get_user_by_id",
@@ -107,19 +108,19 @@ function getPatients(id) {
 }
 
 function viewImages(index) {
-	window.location.href = "http://batterynusantara.com/image";
+	window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/image";
 }
 
 function viewDevices(index) {
-	window.location.href = "http://batterynusantara.com/devices?id="+patients[index]['id'];
+	window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/devices?id="+patients[index]['id'];
 }
 
 function viewPatients(index) {
-	window.location.href = "http://batterynusantara.com/patients?id="+patients[index]['id'];
+	window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/patients?id="+patients[index]['id'];
 }
 
 function editPatient(index) {
-	$.redirect("http://batterynusantara.com/patients/edit", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/patients/edit", {
 		'id': parseInt(patients[index]['id']),
 		'uuid': patients[index]['uuid'],
 		'user_id': parseInt(patients[index]['user_id'])

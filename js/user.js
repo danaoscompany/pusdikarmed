@@ -38,11 +38,10 @@ function getUsers() {
                 let user = users[i];
                 $("#users").append("<tr>" +
                     "                                        <th scope=\"row\">"+(i+1)+"</th>" +
-                    "                                        <td>"+user['name']+"</td>" +
+                    "                                        <td>"+user['first_name']+"</td>" +
+                    "                                        <td>"+user['last_name']+"</td>" +
                     "                                        <td>"+user['email']+"</td>" +
-                    "                                        <td>"+user['password']+"</td>" +
-					"                                        <td>"+user['phone']+"</td>" +
-					"                                        <td>"+moment(user['birthday']).format('DD MMMM YYYY hh:mm:ss')+"</td>" +
+					"                                        <td>"+user['role']+"</td>" +
                     "                                        <td><button onclick='editUser("+i+")' class='btn-shadow p-1 btn btn-primary btn-sm show-toastr-example'>Edit</button></td>" +
                     "                                        <td><button onclick='confirmDeleteUser("+i+")' class='btn-shadow p-1 btn btn-danger btn-sm show-toastr-example' data-toggle='modal' data-target='#confirm'>Delete</button></td>" +
                     "                                    </tr>");
@@ -53,21 +52,21 @@ function getUsers() {
 
 function viewDevices(index) {
 	var user = users[index];
-	$.redirect("http://batterynusantara.com/devices", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/devices", {
 		id: parseInt(user['id'])
 	});
 }
 
 function viewPatients(index) {
 	var user = users[index];
-	$.redirect("http://batterynusantara.com/patients", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/patients", {
 		id: parseInt(user['id'])
 	});
 }
 
 function editUser(index) {
 	var user = users[index];
-	$.redirect("http://batterynusantara.com/user/edit", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/user/edit", {
 		'user_id': parseInt(user['id'])
 	});
 }

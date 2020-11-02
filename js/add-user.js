@@ -42,29 +42,22 @@ $(document).ready(function() {
 });
 
 function addUser() {
+	let firstName = $("#first-name").val().trim();
+	let lastName = $("#last-name").val().trim();
 	let email = $("#email").val().trim();
-	let password = $("#password").val().trim();
-	let name = $("#name").val().trim();
-	let phone = $("#phone").val().trim();
-	let birthday = $("#birthday").val().trim();
-	let position = parseInt($("#positions").prop('selectedIndex'));
-    if (email == "" || password == "" || name == "" || phone == "" || birthday == "" || position == 0) {
+	let role = parseInt($("#role").prop('selectedIndex'));
+    if (firstName == ""|| lastName == "" || email == "" || role == 0) {
         alert("Mohon lengkapi data");
         return;
     }
-    let role = "customer";
-    if (position == 2) {
-    	role = "store";
-	} else if (position == 3) {
-		role = "owner";
+    if (role == 1) {
+    	role = "admin";
 	}
     let fd = new FormData();
-    fd.append("role", role);
+	fd.append("first_name", firstName);
+	fd.append("last_name", lastName);
     fd.append("email", email);
-    fd.append("password", password);
-	fd.append("name", name);
-	fd.append("phone", phone);
-	fd.append("birthday", birthday);
+	fd.append("role", role);
     $.ajax({
         type: 'POST',
         url: PHP_URL+"/admin/add_user",

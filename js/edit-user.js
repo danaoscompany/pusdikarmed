@@ -1,11 +1,11 @@
 var userID = 0;
 var prevEmail = "";
-var prevPhone = "";
 
 $(document).ready(function() {
 	userID = parseInt($("#user-id").val().trim());
 	let fd = new FormData();
 	fd.append("id", userID);
+	fd.append("date", moment(new Date()).format('YYYY-MM-DD HH:mm:ss'));
 	$.ajax({
 		type: 'POST',
 		url: PHP_URL+"/admin/get_user_by_id",
@@ -16,19 +16,12 @@ $(document).ready(function() {
 		success: function(response) {
 			var user = JSON.parse(response);
 			prevEmail = user['email'];
-			prevPhone = user['phone'];
 			$("#email").val(prevEmail);
-			$("#password").val(user['password']);
-			$("#name").val(user['name']);
-			$("#phone").val(prevPhone);
-			$("#birthday").val(user['birthday']);
+			$("#first-name").val(user['first_name']);
+			$("#last-name").val(user['last_name']);
 			var role = user['role'];
-			if (role == "customer") {
-				$("#positions").prop('selectedIndex', 1);
-			} else if (role == "store") {
-				$("#positions").prop('selectedIndex', 2);
-			} else if (role == "owner") {
-				$("#positions").prop('selectedIndex', 3);
+			if (role == "admin") {
+				$("#role").prop('selectedIndex', 1);
 			}
 		}
 	});
@@ -52,38 +45,26 @@ $(document).ready(function() {
 
 function save() {
 	let email = $("#email").val().trim();
-	let password = $("#password").val().trim();
-	let name = $("#name").val().trim();
-	let phone = $("#phone").val().trim();
-	let birthday = $("#birthday").val().trim();
-	let position = parseInt($("#positions").prop('selectedIndex'));
-	if (email == "" || password == "" || name == "" || phone == "" || birthday == "") {
+	let firstName = $("#first-name").val().trim();
+	let lastName = $("#last-name").val().trim();
+	let role = parseInt($("#role").prop('selectedIndex'));
+	if (email == "" || firstName == "" || lastName == "" || role == 0) {
 		alert("Mohon lengkapi data");
 		return;
 	}
-	let role = "customer";
-	if (position == 2) {
-		role = "store";
-	} else if (position == 3) {
-		role = "owner";
+	if (role == 1) {
+		role = "admin";
 	}
 	let fd = new FormData();
 	fd.append("id", userID);
 	fd.append("email", email);
-	fd.append("password", password);
-	fd.append("name", name);
+	fd.append("first_name", firstName);
+	fd.append("last_name", lastName);
 	fd.append("role", role);
-	fd.append("phone", phone);
-	fd.append("birthday", birthday);
 	if (prevEmail != email) {
 		fd.append("email_changed", 1);
 	} else {
 		fd.append("email_changed", 0);
-	}
-	if (prevPhone != phone) {
-		fd.append("phone_changed", 1);
-	} else {
-		fd.append("phone_changed", 0);
 	}
 	$.ajax({
 		type: 'POST',
