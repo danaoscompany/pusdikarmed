@@ -1,4 +1,4 @@
-const HOST = "pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed";
+const HOST = "pusdikarmed.kodiklat-tniad.mil.id/admin";
 const PHP_URL = "http://"+HOST+"/index.php";
 
 $(document).ready(function() {
@@ -29,6 +29,6 @@ function uuidv4() {
 
 function logout() {
 	if (confirm("Apakah Anda yakin ingin keluar?")) {
-		window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/logout";
+		window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/logout";
 	}
 }

@@ -52,21 +52,21 @@ function getUsers() {
 
 function viewDevices(index) {
 	var user = users[index];
-	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/devices", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/admin/devices", {
 		id: parseInt(user['id'])
 	});
 }
 
 function viewPatients(index) {
 	var user = users[index];
-	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/patients", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/admin/patients", {
 		id: parseInt(user['id'])
 	});
 }
 
 function editUser(index) {
 	var user = users[index];
-	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/user/edit", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/admin/user/edit", {
 		'user_id': parseInt(user['id'])
 	});
 }

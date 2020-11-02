@@ -11,9 +11,9 @@
 		  content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no"/>
 	<meta name="description" content="Build whatever layout you need with our Architect framework.">
 	<meta name="msapplication-tap-highlight" content="no">
-	<script src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/js/jquery.js"></script>
-	<script src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/js/global.js"></script>
-	<script src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/js/edit-news.js"></script>
+	<script src="http://pusdikarmed.kodiklat-tniad.mil.id/admin/js/jquery.js"></script>
+	<script src="http://pusdikarmed.kodiklat-tniad.mil.id/admin/js/global.js"></script>
+	<script src="http://pusdikarmed.kodiklat-tniad.mil.id/admin/js/edit-news.js"></script>
 	<!--
 	=========================================================
 	* ArchitectUI HTML Theme Dashboard - v1.0.0
@@ -24,13 +24,13 @@
 	=========================================================
 	* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 	-->
-	<link href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/main.css" rel="stylesheet">
+	<link href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/main.css" rel="stylesheet">
 </head>
 <body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
 	<div class="app-header header-shadow">
 		<div class="app-header__logo">
-			<img src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/assets/images/icon.png" width="50px" height="30px">
+			<img src="http://pusdikarmed.kodiklat-tniad.mil.id/admin/assets/images/icon.png" width="50px" height="30px">
 			<div class="header__pane ml-auto">
 				<div>
 					<button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
@@ -65,55 +65,55 @@
 			<div class="app-header-left">
 				<ul class="header-menu nav">
 					<li class="nav-item">
-						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/admin" class="nav-link">
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/admin" class="nav-link">
 							<i class="nav-link-icon fa fa-users-cog"> </i>
 							Admin
 						</a>
 					</li>
 					<li class="btn-group nav-item">
-						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/user" class="nav-link">
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/user" class="nav-link">
 							<i class="nav-link-icon fa fa-user"></i>
 							User
 						</a>
 					</li>
 					<li class="btn-group nav-item">
-						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/banner" class="nav-link">
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/banner" class="nav-link">
 							<i class="nav-link-icon fa fa-bookmark"></i>
 							Banner
 						</a>
 					</li>
 					<li class="btn-group nav-item">
-						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/store" class="nav-link">
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/store" class="nav-link">
 							<i class="nav-link-icon fa fa-store"></i>
 							Toko
 						</a>
 					</li>
 					<li class="btn-group nav-item">
-						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/product" class="nav-link">
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/product" class="nav-link">
 							<i class="nav-link-icon fa fa-box-open"></i>
 							Produk
 						</a>
 					</li>
 					<li class="btn-group nav-item">
-						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/news" class="nav-link">
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/news" class="nav-link">
 							<i class="nav-link-icon fa fa-newspaper"></i>
 							Berita
 						</a>
 					</li>
 					<li class="btn-group nav-item">
-						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/message" class="nav-link">
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/message" class="nav-link">
 							<i class="nav-link-icon fa fa-envelope"></i>
 							Pesan
 						</a>
 					</li>
 					<li class="btn-group nav-item">
-						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/settings" class="nav-link">
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/settings" class="nav-link">
 							<i class="nav-link-icon fa fa-tools"></i>
 							Pengaturan
 						</a>
 					</li>
 					<li class="dropdown nav-item">
-						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/logout" class="nav-link">
+						<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/logout" class="nav-link">
 							<i class="nav-link-icon fa fa-sign-out-alt"></i>
 							Logout
 						</a>
@@ -128,7 +128,7 @@
 								<div class="btn-group">
 									<a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
 									   class="p-0 btn">
-										<img width="42" height="42" class="rounded-circle" src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/images/profile_picture.png" alt="" style="border-radius: 21;">
+										<img width="42" height="42" class="rounded-circle" src="http://pusdikarmed.kodiklat-tniad.mil.id/admin/images/profile_picture.png" alt="" style="border-radius: 21;">
 										<i class="fa fa-angle-down ml-2 opacity-8"></i>
 									</a>
 									<div tabindex="-1" role="menu" aria-hidden="true"
@@ -152,7 +152,7 @@
 	<div class="app-main">
 		<div class="app-sidebar sidebar-shadow">
 			<div class="app-header__logo">
-				<img src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/assets/images/icon.png" width="50px" height="30px">
+				<img src="http://pusdikarmed.kodiklat-tniad.mil.id/admin/assets/images/icon.png" width="50px" height="30px">
 				<div class="header__pane ml-auto">
 					<div>
 						<button type="button" class="hamburger close-sidebar-btn hamburger--elastic"
@@ -188,54 +188,54 @@
 					<ul class="vertical-nav-menu">
 						<li>
 						<li>
-							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/admin">
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/admin">
 								<i class="metismenu-icon pe-7s-users"></i>
 								Admin
 							</a>
 						</li>
 						<li>
-							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/user">
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/user">
 								<i class="metismenu-icon pe-7s-users"></i>
 								User
 							</a>
 						</li>
 						<li>
-							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/banner">
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/banner">
 								<i class="metismenu-icon pe-7s-flag"></i>
 								Banner
 							</a>
 						</li>
 						<li>
-							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/store">
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/store">
 								<i class="metismenu-icon pe-7s-shopbag"></i>
 								Toko
 							</a>
 						</li>
 						<li>
-							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/product">
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/product">
 								<i class="metismenu-icon pe-7s-cart"></i>
 								Produk
 							</a>
 						</li>
 						<li class="mm-active">
-							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/news">
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/news">
 								<i class="metismenu-icon pe-7s-news-paper"></i>
 								Berita
 							</a>
 						<li>
-							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/message">
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/message">
 								<i class="metismenu-icon pe-7s-mail-open"></i>
 								Pesan
 							</a>
 						</li>
 						<li>
-							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/settings">
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/settings">
 								<i class="metismenu-icon pe-7s-settings"></i>
 								Pengaturan
 							</a>
 						</li>
 						<li>
-							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/logout">
+							<a href="http://pusdikarmed.kodiklat-tniad.mil.id/admin/logout">
 								<i class="metismenu-icon pe-7s-close-circle"></i>
 								Keluar
 							</a>
@@ -385,6 +385,6 @@
 <input id="admin-id" type="hidden" value="<?php echo $adminID; ?>">
 <input id="news-id" type="hidden" value="<?php echo $newsID; ?>">
 <input id="select-news-img" type="file" style="width: 0; height: 0; visibility: hidden;">
-<script type="text/javascript" src="http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/assets/scripts/main.js"></script>
+<script type="text/javascript" src="http://pusdikarmed.kodiklat-tniad.mil.id/admin/assets/scripts/main.js"></script>
 </body>
 </html>

@@ -21,7 +21,7 @@ $(document).ready(function() {
 				$("#message-container").css("display", "block");
 				$("#image-container").css("display", "none");
 			} else if (message['type'] == 'image') {
-				$("#image").attr("src", "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/userdata/"+message['image']);
+				$("#image").attr("src", "http://pusdikarmed.kodiklat-tniad.mil.id/admin/userdata/"+message['image']);
 				$("#message-container").css("display", "none");
 				$("#image-container").css("display", "block");
 			}

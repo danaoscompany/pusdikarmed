@@ -9,7 +9,7 @@ class Banner extends CI_Controller {
 				'adminID' => $adminID
 			));
 		} else {
-			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/login');
+			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/admin/login');
 		}
 	}
 
@@ -22,7 +22,7 @@ class Banner extends CI_Controller {
 				'bannerID' => $bannerID
 			));
 		} else {
-			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/login');
+			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/admin/login');
 		}
 	}
 }

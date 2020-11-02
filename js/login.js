@@ -22,7 +22,7 @@ function login() {
 			let obj = JSON.parse(response);
 			var responseCode = parseInt(obj['response_code']);
 			if (responseCode == 1) {
-				window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/user";
+				window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/user";
 			} else if (responseCode == -1) {
 				alert("The email or password you entered is incorrect.");
 			} else if (responseCode == -2) {

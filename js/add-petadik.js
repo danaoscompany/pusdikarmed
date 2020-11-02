@@ -37,7 +37,7 @@ function addDocument() {
 		contentType: false,
 		cache: false,
 		success: function(response) {
-			window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/petadik";
+			window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/petadik";
 		}
 	});
 }

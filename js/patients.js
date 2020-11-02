@@ -108,19 +108,19 @@ function getPatients(id) {
 }
 
 function viewImages(index) {
-	window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/image";
+	window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/image";
 }
 
 function viewDevices(index) {
-	window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/devices?id="+patients[index]['id'];
+	window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/devices?id="+patients[index]['id'];
 }
 
 function viewPatients(index) {
-	window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/patients?id="+patients[index]['id'];
+	window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/patients?id="+patients[index]['id'];
 }
 
 function editPatient(index) {
-	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/patients/edit", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/admin/patients/edit", {
 		'id': parseInt(patients[index]['id']),
 		'uuid': patients[index]['uuid'],
 		'user_id': parseInt(patients[index]['user_id'])

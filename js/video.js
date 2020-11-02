@@ -46,7 +46,7 @@ function getVideos() {
 
 function editVideo(index) {
 	var video = videos[index];
-	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/video/edit", {
+	$.redirect("http://pusdikarmed.kodiklat-tniad.mil.id/admin/video/edit", {
 		'id': parseInt(video['id'])
 	});
 }
@@ -70,7 +70,7 @@ function deleteVideo() {
 		contentType: false,
 		cache: false,
 		success: function(response) {
-			window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/video";
+			window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/video";
 		}
 	});
 }

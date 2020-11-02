@@ -9,7 +9,7 @@ class Video extends CI_Controller {
 				'adminID' => $adminID
 			));
 		} else {
-			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/login');
+			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/admin/login');
 		}
 	}
 
@@ -20,7 +20,7 @@ class Video extends CI_Controller {
 				'adminID' => $adminID
 			));
 		} else {
-			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/login');
+			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/admin/login');
 		}
 	}
 
@@ -33,7 +33,7 @@ class Video extends CI_Controller {
 				'id' => $id
 			));
 		} else {
-			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/login');
+			header('Location: http://pusdikarmed.kodiklat-tniad.mil.id/admin/login');
 		}
 	}
 }

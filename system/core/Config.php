@@ -104,7 +104,7 @@ class CI_Config {
 			}
 			else
 			{
-				$base_url = 'http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/';
+				$base_url = 'http://pusdikarmed.kodiklat-tniad.mil.id/admin/';
 			}
 
 			$this->set_item('base_url', $base_url);

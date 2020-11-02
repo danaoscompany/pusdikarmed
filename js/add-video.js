@@ -61,7 +61,7 @@ function uploadFile(name) {
 		ajax.addEventListener("load", completeHandler, false);
 		ajax.addEventListener("error", errorHandler, false);
 		ajax.addEventListener("abort", abortHandler, false);
-		ajax.open("POST", "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/admin/add_video");
+		ajax.open("POST", "http://pusdikarmed.kodiklat-tniad.mil.id/admin/admin/add_video");
 		ajax.send(formdata);
 	};
 	fr.readAsDataURL(selectedVideoThumbnail);
@@ -73,7 +73,7 @@ function progressHandler(event) {
 }
 
 function completeHandler(event) {
-	window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/pusdikarmed/video";
+	window.location.href = "http://pusdikarmed.kodiklat-tniad.mil.id/admin/video";
 }
 
 function errorHandler(event) {
