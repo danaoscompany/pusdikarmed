@@ -578,7 +578,7 @@ class Admin extends CI_Controller {
 
 	public function delete_user() {
 		$id = intval($this->input->post('id'));
-		unlink("userdata/" . $this->db->get_where('users', array('id' => $id)->row_array()['profile_picture']));
+		unlink("userdata/" . $this->db->get_where('users', array('id' => $id))->row_array()['profile_picture']);
 		$this->db->where('id', $id);
 		$this->db->delete('users');
 	}
@@ -663,14 +663,14 @@ class Admin extends CI_Controller {
 
 	public function delete_document() {
 		$id = intval($this->input->post('id'));
-		unlink("userdata/" . $this->db->get_where('documents', array('id' => $id)->row_array()['path']));
+		unlink("userdata/" . $this->db->get_where('documents', array('id' => $id))->row_array()['path']);
 		$this->db->where('id', $id);
 		$this->db->delete('documents');
 	}
 
 	public function delete_petadik_document() {
 		$id = intval($this->input->post('id'));
-		unlink("userdata/" . $this->db->get_where('petadik', array('id' => $id)->row_array()['path']));
+		unlink("userdata/" . $this->db->get_where('petadik', array('id' => $id))->row_array()['path']);
 		$this->db->where('id', $id);
 		$this->db->delete('petadik');
 	}
@@ -748,7 +748,7 @@ class Admin extends CI_Controller {
 
 	public function delete_video() {
 		$id = intval($this->input->post('id'));
-		unlink("userdata/" . $this->db->get_where('videos', array('id' => $id)->row_array()['path']));
+		unlink("userdata/" . $this->db->get_where('videos', array('id' => $id))->row_array()['path']);
 		$this->db->query("DELETE FROM `videos` WHERE `id`=" . $id);
 	}
 

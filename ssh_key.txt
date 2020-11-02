@@ -1,0 +1,24 @@
+Generating public/private rsa key pair.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/pusdikarmed/.ssh/id_rsa.
+Your public key has been saved in /home/pusdikarmed/.ssh/id_rsa.pub.
+The key fingerprint is:
+bb:c2:9b:01:b5:32:39:30:9c:6f:0c:ea:ac:88:4b:1c 
+The key's randomart image is:
++--[ RSA 2048]----+
+|                 |
+| . .             |
+|  *   .          |
+| . * o .         |
+|.E  X . S        |
+|+ .. =   .       |
+| =   .. .        |
+|=     oo .       |
+|=.    oo.        |
++-----------------+
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6MZkaVK68fjKKNN2PPccOL+WZM1IMT9mwxLNIWsS3WyYmI9dhHwMmeSZkDue535jsD1VlRagfLjYh+1UzGJ+9lcQyia8+L4HYEmkASD2an4I4iG6KhouqOssnO7Rk6aZW0Ljs8OC2q4a+P8ETiwyKdSbtMcVex07tAI2nHKxWYpyBcHNfu7XhyezNm89i37NEaA7s2gMOYs09bwTpbvKoe0bFz3k2Ah9YmbqSTfrSjxvJPXfTnIVZxtQ3Tj5GSDFJGtzGBm6bGkQmdGGQT8ZprhArEd55VLGrcCbvDLFgHK1n8Dc2PITYpdt2JHFuXWMU7cNxnQOAMivrNpPzdEjDw==
+
+
