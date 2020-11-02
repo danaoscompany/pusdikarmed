@@ -1,3 +1,3 @@
 git add .
 git commit -m "Last commit"
-git ftp push
+git push -u origin master
