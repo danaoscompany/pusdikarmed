@@ -345,6 +345,13 @@ class User extends CI_Controller {
 		echo json_encode($this->db->query("SELECT * FROM `petadik` ORDER BY `title`")->result_array());
 	}
 
+	public function get_perwira_documents() {
+		$userID = intval($this->input->post('user_id'));
+		$date = $this->input->post('date');
+		$this->db->query("UPDATE `users` SET `last_access`='" . $date . "' WHERE `id`=" . $userID);
+		echo json_encode($this->db->query("SELECT * FROM `documents` WHERE `type`='pa' ORDER BY `name`")->result_array());
+	}
+
 	public function send_message() {
 		$userID = intval($this->input->post('user_id'));
 		$message = $this->input->post('message');
