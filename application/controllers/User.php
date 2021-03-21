@@ -339,10 +339,12 @@ class User extends CI_Controller {
 	}
 
 	public function get_petadik_documents() {
-		$userID = intval($this->input->post('user_id'));
-		$date = $this->input->post('date');
-		$this->db->query("UPDATE `users` SET `last_access`='" . $date . "' WHERE `id`=" . $userID);
-		echo json_encode($this->db->query("SELECT * FROM `petadik` ORDER BY `title`")->result_array());
+		echo json_encode($this->db->query("SELECT * FROM `petadik`")->result_array());
+	}
+
+	public function get_petadik_document() {
+		$title = $this->input->post('title');
+		echo json_encode($this->db->query("SELECT * FROM `petadik` WHERE `title`='" . $title . "'")->row_array());
 	}
 
 	public function get_perwira_documents() {
@@ -428,5 +430,55 @@ class User extends CI_Controller {
 			}
 		}
 		echo json_encode($messages);
+	}
+	
+	public function get_pusdikarmed_profile() {
+		echo json_encode($this->db->query("SELECT * FROM `profile` WHERE `type`='pusdikarmed_profile'")->row_array());
+	}
+	
+	public function get_about_pia() {
+		echo json_encode($this->db->query("SELECT * FROM `profile` WHERE `type`='about_p_i_a'")->row_array());
+	}
+	
+	public function get_tutorial_video() {
+		echo json_encode($this->db->query("SELECT * FROM `profile` WHERE `type`='tutorial_video'")->row_array());
+	}
+	
+	public function get_kaldik_document() {
+		$year = intval($this->input->post('year'));
+		echo json_encode($this->db->query("SELECT * FROM `kaldik` WHERE `year`=" . $year)->row_array());
+	}
+	
+	public function get_kurdik_documents() {
+		$type = $this->input->post('type');
+		echo json_encode($this->db->query("SELECT * FROM `kurdik` WHERE `type`='" . $type . "'")->result_array());
+	}
+	
+	public function get_kurdik_document() {
+		$type = $this->input->post('type');
+		$title = $this->input->post('title');
+		echo json_encode($this->db->query("SELECT * FROM `kurdik` WHERE `type`='" . $type . "' AND `title`='" . $title . "'")->row_array());
+	}
+	
+	public function get_nilai_documents() {
+		$type = $this->input->post('type');
+		echo json_encode($this->db->query("SELECT * FROM `nilai` WHERE `type`='" . $type . "'")->result_array());
+	}
+	
+	public function get_nilai_document() {
+		$type = $this->input->post('type');
+		$title = $this->input->post('title');
+		echo json_encode($this->db->query("SELECT * FROM `nilai` WHERE `type`='" . $type . "' AND `title`='" . $title . "'")->row_array());
+	}
+
+	public function get_gumil_documents() {
+		$type = $this->input->post('type');
+		echo json_encode($this->db->query("SELECT * FROM `gumil` WHERE `type`='" . $type . "'")->result_array());
+	}
+
+	public function get_gumil_document() {
+		$type = $this->input->post('type');
+		$title = $this->input->post('title');
+		echo json_encode($this->db->query("SELECT * FROM `gumil` WHERE `type`='" . $type . "' AND `title`='" . $title . "'")->row_array());
 	}
 }
