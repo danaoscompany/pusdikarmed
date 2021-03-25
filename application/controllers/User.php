@@ -372,9 +372,11 @@ class User extends CI_Controller {
 		$userID = intval($this->input->post('user_id'));
 		$message = $this->input->post('message');
 		$date = $this->input->post('date');
+		$category = $this->input->post('category');
 		$this->db->query("UPDATE `users` SET `last_access`='" . $date . "' WHERE `id`=" . $userID);
 		$user = $this->db->query("SELECT * FROM `users` WHERE `id`=" . $userID)->row_array();
 		$this->db->insert('messages', array(
+			'category' => $category,
 			'user_id' => $userID,
 			'message' => $message,
 			'type' => 'text',
@@ -392,7 +394,11 @@ class User extends CI_Controller {
 				"user_id" => "" . $userID,
 				"message" => $message,
 				"date" => $date
-			)
+			),
+			'notification' => array(
+            	'title' => 'Pesan baru',
+            	'body' => strlen($message)>100?substr($message, 0, 100)."...":$message
+            )
 		);
 		$fields = json_encode ( $fields );
 		$headers = array (
@@ -407,6 +413,7 @@ class User extends CI_Controller {
 		curl_setopt ( $ch, CURLOPT_POSTFIELDS, $fields );
 		$result = curl_exec ( $ch );
 		curl_close ( $ch );
+		//echo json_encode($result);
 	}
 
 	public function get_users() {
@@ -419,8 +426,9 @@ class User extends CI_Controller {
 	public function get_messages() {
 		$userID = intval($this->input->post('user_id'));
 		$date = $this->input->post('date');
+		$category = $this->input->post('category');
 		$this->db->query("UPDATE `users` SET `last_access`='" . $date . "' WHERE `id`=" . $userID);
-		$messages = $this->db->query("SELECT * FROM `messages`")->result_array();
+		$messages = $this->db->query("SELECT * FROM `messages` WHERE `category`='" . $category . "'")->result_array();
 		for ($i=0; $i<sizeof($messages); $i++) {
 			$userID = intval($messages[$i]['user_id']);
 			$user = $this->db->query("SELECT * FROM `users` WHERE `id`=" . $userID)->row_array();
