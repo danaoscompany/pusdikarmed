@@ -118,14 +118,12 @@ class Admin extends CI_Controller {
 	public function add_admin() {
 		$name = $_POST['name'];
 		$email = $_POST['email'];
-		$password = $_POST['password'];
 		if (sizeof($this->db->query("SELECT * FROM `admins` WHERE `email`='" . $email . "'")->result_array()) > 0) {
 			echo -1;
 		} else {
 			$this->db->insert('admins', array(
 				'name' => $name,
-				'email' => $email,
-				'password' => $password
+				'email' => $email
 			));
 			echo 1;
 		}
@@ -460,6 +458,12 @@ class Admin extends CI_Controller {
 		$this->db->delete('admins');
 	}
 
+	public function delete_user_by_id() {
+		$id = intval($this->input->post('id'));
+		$this->db->where('id', $id);
+		$this->db->delete('users');
+	}
+
 	public function login() {
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
@@ -493,7 +497,6 @@ class Admin extends CI_Controller {
 		$firstName = $this->input->post('first_name');
 		$lastName = $this->input->post('last_name');
 		$email = $this->input->post('email');
-		$role = $this->input->post('role');
 		$this->db->where('email', $email);
 		$users = $this->db->get('users')->result_array();
 		if (sizeof($users) > 0) {
@@ -505,8 +508,7 @@ class Admin extends CI_Controller {
 		$this->db->insert('users', array(
 			'email' => $email,
 			'first_name' => $firstName,
-			'last_name' => $lastName,
-			'role' => $role
+			'last_name' => $lastName
 		));
 		echo json_encode(array(
 			'response_code' => 1
@@ -517,11 +519,10 @@ class Admin extends CI_Controller {
 		$adminID = intval($this->input->post('id'));
 		$name = $this->input->post('name');
 		$email = $this->input->post('email');
-		$password = $this->input->post('password');
 		$emailChanged = intval($this->input->post('email_changed'));
 		if ($emailChanged == 1) {
 			$this->db->where('email', $email);
-			$users = $this->db->get('users')->result_array();
+			$users = $this->db->get('admins')->result_array();
 			if (sizeof($users) > 0) {
 				echo json_encode(array(
 					'response_code' => -1
@@ -532,8 +533,7 @@ class Admin extends CI_Controller {
 		$this->db->where('id', $adminID);
 		$this->db->update('admins', array(
 			'name' => $name,
-			'email' => $email,
-			'password' => $password
+			'email' => $email
 		));
 		echo json_encode(array(
 			'response_code' => 1
@@ -545,9 +545,7 @@ class Admin extends CI_Controller {
 		$email = $this->input->post('email');
 		$firstName = $this->input->post('first_name');
 		$lastName = $this->input->post('last_name');
-		$role = $this->input->post('role');
 		$emailChanged = intval($this->input->post('email_changed'));
-		$phoneChanged = intval($this->input->post('phone_changed'));
 		if ($emailChanged == 1) {
 			$this->db->where('email', $email);
 			$users = $this->db->get('users')->result_array();
@@ -562,8 +560,7 @@ class Admin extends CI_Controller {
 		$this->db->update('users', array(
 			'email' => $email,
 			'first_name' => $firstName,
-			'last_name' => $lastName,
-			'role' => $role
+			'last_name' => $lastName
 		));
 		echo json_encode(array(
 			'response_code' => 1
@@ -675,6 +672,34 @@ class Admin extends CI_Controller {
 		$this->db->delete('petadik');
 	}
 
+	public function delete_kurdik_document() {
+		$id = intval($this->input->post('id'));
+		unlink("userdata/" . $this->db->get_where('kurdik', array('id' => $id))->row_array()['path']);
+		$this->db->where('id', $id);
+		$this->db->delete('kurdik');
+	}
+
+	public function delete_kaldik_document() {
+		$id = intval($this->input->post('id'));
+		unlink("userdata/" . $this->db->get_where('kaldik', array('id' => $id))->row_array()['path']);
+		$this->db->where('id', $id);
+		$this->db->delete('kaldik');
+	}
+
+	public function delete_gumil_document() {
+		$id = intval($this->input->post('id'));
+		unlink("userdata/" . $this->db->get_where('gumil', array('id' => $id))->row_array()['path']);
+		$this->db->where('id', $id);
+		$this->db->delete('gumil');
+	}
+
+	public function delete_nilai_document() {
+		$id = intval($this->input->post('id'));
+		unlink("userdata/" . $this->db->get_where('nilai', array('id' => $id))->row_array()['path']);
+		$this->db->where('id', $id);
+		$this->db->delete('nilai');
+	}
+
 	public function get_document_by_id() {
 		$id = intval($this->input->post('id'));
 		echo json_encode($this->db->query("SELECT * FROM `documents` WHERE `id`=" . $id)->row_array());
@@ -687,6 +712,25 @@ class Admin extends CI_Controller {
 
 	public function get_petadik_documents() {
 		echo json_encode($this->db->query("SELECT * FROM `petadik` ORDER BY `title`")->result_array());
+	}
+
+	public function get_kurdik_documents() {
+		$category = $this->input->post('category');
+		echo json_encode($this->db->query("SELECT * FROM `kurdik` WHERE `type`='" . $category . "' ORDER BY `title`")->result_array());
+	}
+
+	public function get_kaldik_documents() {
+		echo json_encode($this->db->query("SELECT * FROM `kaldik` ORDER BY `year`")->result_array());
+	}
+
+	public function get_gumil_documents() {
+		$category = $this->input->post('category');
+		echo json_encode($this->db->query("SELECT * FROM `gumil` WHERE `type`='" . $category . "' ORDER BY `title`")->result_array());
+	}
+
+	public function get_nilai_documents() {
+		$category = $this->input->post('category');
+		echo json_encode($this->db->query("SELECT * FROM `nilai` WHERE `type`='" . $category . "' ORDER BY `title`")->result_array());
 	}
 
 	public function add_petadik_document() {
@@ -709,36 +753,435 @@ class Admin extends CI_Controller {
 			echo json_encode($this->upload->display_errors());
 		}
 	}
-
+	
+	public function update_petadik_icon() {
+		$id = intval($this->input->post('id'));
+		$title = $this->input->post('title');
+		$config = array(
+			'upload_path' => './userdata/',
+			'allowed_types' => "*",
+			'overwrite' => TRUE,
+			'file_name' => uniqid() . ".png"
+		);
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('icon')) {
+			$iconPath = $this->upload->data()['file_name'];
+			$this->db->where('id', $id);
+			$this->db->update('petadik', array(
+				'title' => $title,
+				'logo' => $iconPath
+			));
+		} else {
+			echo json_encode($this->upload->display_errors());
+		}
+	}
+	
+	public function add_petadik_title() {
+		$title = $this->input->post('title');
+		$this->db->insert('petadik', array(
+			'title' => $title
+		));
+		$id = $this->db->insert_id();
+		echo json_encode($this->db->query("SELECT * FROM `petadik` WHERE `id`=" . $id)->row_array());
+	}
+	
+	public function update_petadik_title() {
+		$id = intval($this->input->post('id'));
+		$title = $this->input->post('title');
+		$this->db->where('id', $id);
+		$this->db->update('petadik', array(
+			'title' => $title,
+		));
+	}
+	
 	public function update_petadik_document() {
 		$id = intval($this->input->post('id'));
-		$name = $this->input->post('name');
+		$title = $this->input->post('title');
+		$config = array(
+			'upload_path' => './userdata/',
+			'allowed_types' => "*",
+			'overwrite' => TRUE,
+			'file_name' => uniqid() . ".pdf"
+		);
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('document')) {
+			$documentPath = $this->upload->data()['file_name'];
+			$this->db->where('id', $id);
+			$this->db->update('petadik', array(
+				'title' => $title,
+				'file_name' => $documentPath,
+				'path' => $documentPath
+			));
+		} else {
+			echo json_encode($this->upload->display_errors());
+		}
+	}
+	
+	public function update_petadik() {
+		$id = intval($this->input->post('id'));
+		$title = $this->input->post('title');
+		$iconChanged = intval($this->input->post('icon_changed'));
 		$documentChanged = intval($this->input->post('document_changed'));
-		if ($documentChanged == 1) {
-			$fileName = $this->input->post('file_name');
+		if ($iconChanged == 1) {
 			$config = array(
-				'upload_path' => './userdata/petadik',
-				'allowed_types' => "pdf",
+				'upload_path' => './userdata/',
+				'allowed_types' => "jpeg",
 				'overwrite' => TRUE,
-				'file_name' => uniqid()
+				'file_name' => uniqid() . ".png"
 			);
 			$this->load->library('upload', $config);
-			if ($this->upload->do_upload('file')) {
+			if ($this->upload->do_upload('icon')) {
+				$iconPath = $this->upload->data()['file_name'];
 				$this->db->where('id', $id);
 				$this->db->update('petadik', array(
-					'title' => $name,
-					'file_name' => $fileName,
-					'path' => "petadik/" . $this->upload->data()['file_name']
+					'title' => $title,
+					'logo' => $iconPath
 				));
+				if ($documentChanged == 1) {
+					$config = array(
+						'upload_path' => './userdata/',
+						'allowed_types' => "pdf",
+						'overwrite' => TRUE,
+						'file_name' => uniqid() . ".pdf"
+					);
+					$this->load->library('upload', $config);
+					if ($this->upload->do_upload('document')) {
+						$documentPath = $this->upload->data()['file_name'];
+						$this->db->where('id', $id);
+						$this->db->update('petadik', array(
+							'title' => $title,
+							'file_name' => $documentPath,
+							'path' => $documentPath
+						));
+					} else {
+						echo json_encode($this->upload->display_errors());
+					}
+				} else {
+					$this->db->where('id', $id);
+					$this->db->update('petadik', array(
+						'title' => $title
+					));
+				}
 			} else {
 				echo json_encode($this->upload->display_errors());
 			}
 		} else {
 			$this->db->where('id', $id);
 			$this->db->update('petadik', array(
-				'title' => $name
+				'title' => $title
 			));
-			echo "UPDATE petadik SET title='" . $name . "' WHERE id=" . $id;
+			if ($documentChanged == 1) {
+				$config = array(
+					'upload_path' => './userdata/',
+					'allowed_types' => "pdf",
+					'overwrite' => TRUE,
+					'file_name' => uniqid() . ".pdf"
+				);
+				$this->load->library('upload', $config);
+				if ($this->upload->do_upload('document')) {
+					$documentPath = $this->upload->data()['file_name'];
+					$this->db->where('id', $id);
+					$this->db->update('petadik', array(
+						'title' => $title,
+						'file_name' => $documentPath,
+						'path' => $documentPath
+					));
+				} else {
+					echo json_encode($this->upload->display_errors());
+				}
+			} else {
+				$this->db->where('id', $id);
+				$this->db->update('petadik', array(
+					'title' => $title
+				));
+			}
+		}
+	}
+	
+	public function update_kurdik_document() {
+		$id = intval($this->input->post('id'));
+		$title = $this->input->post('title');
+		$config = array(
+			'upload_path' => './userdata/',
+			'allowed_types' => "*",
+			'overwrite' => TRUE,
+			'file_name' => uniqid() . ".pdf"
+		);
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('document')) {
+			$documentPath = $this->upload->data()['file_name'];
+			$this->db->where('id', $id);
+			$this->db->update('kurdik', array(
+				'title' => $title,
+				'path' => $documentPath
+			));
+		} else {
+			echo json_encode($this->upload->display_errors());
+		}
+	}
+	
+	public function update_kurdik_title() {
+		$id = intval($this->input->post('id'));
+		$title = $this->input->post('title');
+		$this->db->where('id', $id);
+		$this->db->update('kurdik', array(
+			'title' => $title
+		));
+	}
+	
+	public function add_kurdik_document() {
+		$title = $this->input->post('title');
+		$category = $this->input->post('category');
+		$documentChanged = intval($this->input->post('document_changed'));
+		if ($documentChanged == 1) {
+			$config = array(
+				'upload_path' => './userdata/',
+				'allowed_types' => "*",
+				'overwrite' => TRUE,
+				'file_name' => uniqid() . ".pdf"
+			);
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('document')) {
+				$documentPath = $this->upload->data()['file_name'];
+				$this->db->insert('kurdik', array(
+					'type' => $category,
+					'title' => $title,
+					'path' => $documentPath
+				));
+			} else {
+				echo json_encode($this->upload->display_errors());
+			}
+		} else {
+			$this->db->insert('kurdik', array(
+				'type' => $category,
+				'title' => $title
+			));
+		}
+	}
+	
+	public function update_kaldik_document() {
+		$id = intval($this->input->post('id'));
+		$year = intval($this->input->post('year'));
+		$config = array(
+			'upload_path' => './userdata/',
+			'allowed_types' => "*",
+			'overwrite' => TRUE,
+			'file_name' => uniqid() . ".pdf"
+		);
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('document')) {
+			$documentPath = $this->upload->data()['file_name'];
+			$this->db->where('id', $id);
+			$this->db->update('kaldik', array(
+				'year' => $year,
+				'path' => $documentPath
+			));
+		} else {
+			echo json_encode($this->upload->display_errors());
+		}
+	}
+	
+	public function update_kaldik_year() {
+		$id = intval($this->input->post('id'));
+		$year = intval($this->input->post('year'));
+		$this->db->where('id', $id);
+		$this->db->update('kaldik', array(
+			'year' => $year
+		));
+	}
+	
+	public function add_kaldik_document() {
+		$year = intval($this->input->post('year'));
+		$category = $this->input->post('category');
+		$documentChanged = intval($this->input->post('document_changed'));
+		if ($documentChanged == 1) {
+			$config = array(
+				'upload_path' => './userdata/',
+				'allowed_types' => "*",
+				'overwrite' => TRUE,
+				'file_name' => uniqid() . ".pdf"
+			);
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('document')) {
+				$documentPath = $this->upload->data()['file_name'];
+				$this->db->insert('kaldik', array(
+					'year' => $year,
+					'path' => $documentPath
+				));
+			} else {
+				echo json_encode($this->upload->display_errors());
+			}
+		} else {
+			$this->db->insert('kaldik', array(
+				'year' => $year
+			));
+		}
+	}
+	
+	public function update_gumil_document() {
+		$id = intval($this->input->post('id'));
+		$title = $this->input->post('title');
+		$config = array(
+			'upload_path' => './userdata/',
+			'allowed_types' => "*",
+			'overwrite' => TRUE,
+			'file_name' => uniqid() . ".pdf"
+		);
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('document')) {
+			$documentPath = $this->upload->data()['file_name'];
+			$this->db->where('id', $id);
+			$this->db->update('gumil', array(
+				'title' => $title,
+				'path' => $documentPath
+			));
+		} else {
+			echo json_encode($this->upload->display_errors());
+		}
+	}
+	
+	public function update_gumil_title() {
+		$id = intval($this->input->post('id'));
+		$title = $this->input->post('title');
+		$this->db->where('id', $id);
+		$this->db->update('gumil', array(
+			'title' => $title
+		));
+	}
+	
+	public function add_gumil_document() {
+		$title = $this->input->post('title');
+		$category = $this->input->post('category');
+		$documentChanged = intval($this->input->post('document_changed'));
+		if ($documentChanged == 1) {
+			$config = array(
+				'upload_path' => './userdata/',
+				'allowed_types' => "*",
+				'overwrite' => TRUE,
+				'file_name' => uniqid() . ".pdf"
+			);
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('document')) {
+				$documentPath = $this->upload->data()['file_name'];
+				$this->db->insert('gumil', array(
+					'type' => $category,
+					'title' => $title,
+					'path' => $documentPath
+				));
+			} else {
+				echo json_encode($this->upload->display_errors());
+			}
+		} else {
+			$this->db->insert('gumil', array(
+				'type' => $category,
+				'title' => $title
+			));
+		}
+	}
+	
+	public function update_nilai_document() {
+		$id = intval($this->input->post('id'));
+		$title = $this->input->post('title');
+		$config = array(
+			'upload_path' => './userdata/',
+			'allowed_types' => "*",
+			'overwrite' => TRUE,
+			'file_name' => uniqid() . ".pdf"
+		);
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('document')) {
+			$documentPath = $this->upload->data()['file_name'];
+			$this->db->where('id', $id);
+			$this->db->update('nilai', array(
+				'title' => $title,
+				'path' => $documentPath
+			));
+		} else {
+			echo json_encode($this->upload->display_errors());
+		}
+	}
+	
+	public function update_nilai_title() {
+		$id = intval($this->input->post('id'));
+		$title = $this->input->post('title');
+		$this->db->where('id', $id);
+		$this->db->update('nilai', array(
+			'title' => $title
+		));
+	}
+	
+	public function add_nilai_document() {
+		$title = $this->input->post('title');
+		$category = $this->input->post('category');
+		$documentChanged = intval($this->input->post('document_changed'));
+		if ($documentChanged == 1) {
+			$config = array(
+				'upload_path' => './userdata/',
+				'allowed_types' => "*",
+				'overwrite' => TRUE,
+				'file_name' => uniqid() . ".pdf"
+			);
+			$this->load->library('upload', $config);
+			if ($this->upload->do_upload('document')) {
+				$documentPath = $this->upload->data()['file_name'];
+				$this->db->insert('nilai', array(
+					'type' => $category,
+					'title' => $title,
+					'path' => $documentPath
+				));
+			} else {
+				echo json_encode($this->upload->display_errors());
+			}
+		} else {
+			$this->db->insert('nilai', array(
+				'type' => $category,
+				'title' => $title
+			));
+		}
+	}
+	
+	public function update_pusdikarmed_profile() {
+		$config = array(
+			'upload_path' => './userdata/',
+			'allowed_types' => "*",
+			'overwrite' => TRUE,
+			'file_name' => uniqid()
+		);
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('video')) {
+			$this->db->query("UPDATE `profile` SET `path`='" . $this->upload->data()['file_name'] . "' WHERE `type`='pusdikarmed_profile'");
+		} else {
+			echo json_encode($this->upload->display_errors());
+		}
+	}
+	
+	public function update_about_pia() {
+		$config = array(
+			'upload_path' => './userdata/',
+			'allowed_types' => "*",
+			'overwrite' => TRUE,
+			'file_name' => uniqid()
+		);
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('document')) {
+			$this->db->query("UPDATE `profile` SET `path`='" . $this->upload->data()['file_name'] . "' WHERE `type`='about_p_i_a'");
+		} else {
+			echo json_encode($this->upload->display_errors());
+		}
+	}
+	
+	public function update_tutorial_video() {
+		$config = array(
+			'upload_path' => './userdata/',
+			'allowed_types' => "*",
+			'overwrite' => TRUE,
+			'file_name' => uniqid()
+		);
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('video')) {
+			$this->db->query("UPDATE `profile` SET `path`='" . $this->upload->data()['file_name'] . "' WHERE `type`='tutorial_video'");
+		} else {
+			echo json_encode($this->upload->display_errors());
 		}
 	}
 
@@ -832,5 +1275,19 @@ class Admin extends CI_Controller {
 	public function get_video_by_id() {
 		$id = intval($this->input->post('id'));
 		echo json_encode($this->db->query("SELECT * FROM `videos` WHERE `id`=" . $id)->row_array());
+	}
+
+	public function get_admin_info_by_email() {
+		$email = $this->input->post('email');
+		$admins = $this->db->query("SELECT * FROM `admins` WHERE `email`='" . $email . "'")->result_array();
+		if (sizeof($admins) > 0) {
+			$admin = $admins[0];
+			$admin['response_code'] = 1;
+			echo json_encode($admin);
+		} else {
+			echo json_encode(array(
+				'response_code' => -1
+			));
+		}
 	}
 }
