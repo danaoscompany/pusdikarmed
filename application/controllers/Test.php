@@ -32,4 +32,29 @@ class Test extends CI_Controller {
 		curl_close ( $ch );
 		echo json_encode($result);
 	}
+	
+	public function upload() {
+		$config = array(
+			'upload_path' => './userdata/',
+			'allowed_types' => "jpg",
+			'overwrite' => TRUE
+		);
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('file1')) {
+			echo "UPLOAD SUCCESS: " . $this->upload->data()['file_name'];
+		} else {
+			echo json_encode($this->upload->display_errors());
+		}
+		$config = array(
+			'upload_path' => './userdata/',
+			'allowed_types' => "jpg",
+			'overwrite' => TRUE
+		);
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('file2')) {
+			echo "UPLOAD SUCCESS: " . $this->upload->data()['file_name'];
+		} else {
+			echo json_encode($this->upload->display_errors());
+		}
+	}
 }
