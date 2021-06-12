@@ -1149,6 +1149,11 @@ class Admin extends CI_Controller {
 		);
 		$this->load->library('upload', $config);
 		if ($this->upload->do_upload('video')) {
+			$profile = $this->db->query("SELECT * FROM `profile` LIMIT 1")->row_array();
+			if ($profile != null) {
+				$path = $profile['path'];
+				unlink("userdata/" . $path);
+			}
 			$this->db->query("UPDATE `profile` SET `path`='" . $this->upload->data()['file_name'] . "' WHERE `type`='pusdikarmed_profile'");
 		} else {
 			echo json_encode($this->upload->display_errors());
