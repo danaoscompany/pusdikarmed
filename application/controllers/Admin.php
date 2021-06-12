@@ -1145,7 +1145,7 @@ class Admin extends CI_Controller {
 			'upload_path' => './userdata/',
 			'allowed_types' => "*",
 			'overwrite' => TRUE,
-			'file_name' => uniqid()
+			'file_name' => $this->input->post('file_name')
 		);
 		$this->load->library('upload', $config);
 		if ($this->upload->do_upload('video')) {
