@@ -1086,7 +1086,7 @@ class Admin extends CI_Controller {
 			'upload_path' => './userdata/',
 			'allowed_types' => "*",
 			'overwrite' => TRUE,
-			'file_name' => uniqid() . ".pdf"
+			'file_name' => uniqid()
 		);
 		$this->load->library('upload', $config);
 		if ($this->upload->do_upload('document')) {
@@ -1119,7 +1119,7 @@ class Admin extends CI_Controller {
 				'upload_path' => './userdata/',
 				'allowed_types' => "*",
 				'overwrite' => TRUE,
-				'file_name' => uniqid() . ".pdf"
+				'file_name' => uniqid()
 			);
 			$this->load->library('upload', $config);
 			if ($this->upload->do_upload('document')) {
