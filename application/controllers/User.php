@@ -489,4 +489,8 @@ class User extends CI_Controller {
 		$title = $this->input->post('title');
 		echo json_encode($this->db->query("SELECT * FROM `gumil` WHERE `type`='" . $type . "' AND `title`='" . $title . "'")->row_array());
 	}
+	
+	public function get_kaldiks() {
+		echo json_encode($this->db->query("SELECT * FROM `kaldik` ORDER BY `year`")->result_array());
+	}
 }
